@@ -12,8 +12,30 @@ module.exports = function(app){
 
 
     app.post("/api/friends", function(req,res){
-        console.log("Body!", req.body);
+
+        scores = [];
+        myData = {};
+
+
+        for (var key in req.body) {
+
+            if (key === 'fname'){
+                myData.name = req.body[key];
+            } else if (key === 'photo') {
+                myData.photo = req.body[key];
+            } else {
+                //push each question response to scores
+                scores.push(req.body[key]);
+            }
+        }
+
+        myData.scores = scores;
+
+        console.log("My body", myData);
         res.send("Got info!");
+
+
+
     });
 };
 
