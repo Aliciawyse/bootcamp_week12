@@ -1,18 +1,35 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
+
 var path = require("path");
 
 
 
-// Routes
-// ===========================================================
-router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/home.html"));
-});
+//ROUTING
 
-router.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/survey.html"));
-});
+
+module.exports = function(app){
+
+
+// HTML GET Requests
+// Below code handles when users "visit" the home page or survey page.
+
+// In each of the below cases the user is shown an HTML page of content
+//
+
+    // app.get("/", function(req, res) {
+    //     res.sendFile(path.join(__dirname + "/../public/home.html"));
+    // });
+
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname + "/../public/survey.html"));
+    });
+
+    // If no matching route is found default to home
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+};
 
 
 // router.post("/api/friends", function(req,res){
@@ -21,4 +38,4 @@ router.get("/survey", function(req, res) {
 //     res.send("Got info!");
 // });
 
-module.exports = router;
+// module.exports = router;

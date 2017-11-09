@@ -6,35 +6,138 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+
+        html {
+            height: 100%;
+
+        }
+        body {
+            margin: 4%;
+            text-align: center;
+            background: linear-gradient(199deg, #7bc8ad 0%, #9fa8db 51%, #2cc5e8 75%);
+        }
+
+        .column1 {
+            width: 44%;
+            display: inline-block;
+        }
+
+        .column2 {
+            width: 44%;
+            display: inline-block;
+
+        }
+
+        button {
+            font-size: 20px;
+            margin-top:4%;
+            border-radius: 10px;
+            background: floralwhite;
+        }
+    </style>
 </head>
 <body>
 
-
+<h1>Take a Quiz. Find your next bestie.</h1>
 <form action="/api/friends" method="POST">
-    <h3>How old are you?</h3>
+
+    <div class="column1">
+    <h4>You enjoy NPR's Tiny Desk Concert series.</h4>
     <select id="q1" name="q1">
-        <option value = "1">20s</option>
-        <option value = "2">30s</option>
-        <option value = "3">40s</option>
-        <option value = "4">50s</option>
-        <option value = "5">60s</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
     </select><br>
 
+
+    <h4>The President of the USA is great.</h4>
     <select id="q2" name="q2">
-        <option value = "1">20s</option>
-        <option value = "2">30s</option>
-        <option value = "3">40s</option>
-        <option value = "4">50s</option>
-        <option value = "5">60s</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
     </select><br>
 
+    <h4>Getting outdoors is fun.</h4>
     <select id="q3" name="q3">
-        <option value = "1">20s</option>
-        <option value = "2">30s</option>
-        <option value = "3">40s</option>
-        <option value = "4">50s</option>
-        <option value = "5">60s</option>
-    </select><br><br>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Michael Jackson is the greatest pop star.</h4>
+    <select id="q4" name="q4">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Breakfast is an important meal.</h4>
+    <select id="q5" name="q5">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    </div>
+
+    <div class="column2">
+    <h4>Meeting people with different perspectives sucks.</h4>
+    <select id="q6" name="q6">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Climate change is real.</h4>
+    <select id="q7" name="q7">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Giving back is important.</h4>
+    <select id="q8" name="q8">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Happiness is better than money.</h4>
+    <select id="q9" name="q9">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select><br>
+
+    <h4>Disneyland is the happiest place on earth.</h4>
+    <select id="q10" name="q10">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    </div>
+    <br><br>
 
     <button type="submit">Submit</button>
 

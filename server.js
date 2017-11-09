@@ -1,30 +1,32 @@
-// Dependencies
-// ===========================================================
+// DEPENDENCIES
 var express = require("express");
-//var path = require("path");
-var app = express();
 var bodyParser = require("body-parser");
+
+//EXPRESS CONFIGURATION
+//Tell node we're creating an express server
+var app = express();
+
+//Set an initial port. This'll be used as our listener
 var PORT = process.env.PORT || 3000;
 
-var index = require("./app/routing/htmlRoutes");
-var api = require("./app/routing/apiRoutes");
-
-
-//parse data
+//Set up express app to handle data parsing
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
 }));
-
 app.use(bodyParser.json());
 
-//routes
-app.use('/', index);
-app.use('/api', api);
+//ROUTER CONFIGURATION
+//The below points our server to a series of "route" files
+// var index = require("./app/routing/htmlRoutes");
+// var api = require("./app/routing/apiRoutes");
+//
+// app.use('/', index);
+// app.use('/api', api);
 
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
-// Starts the server to begin listening
-//=============================================================
+// The below code "starts" our server
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
-
