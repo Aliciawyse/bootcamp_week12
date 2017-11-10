@@ -1,4 +1,5 @@
 var express = require('express');
+var friends = require("../data/friends");
 //var router = express.Router();
 
 // Routes
@@ -31,12 +32,11 @@ module.exports = function(app){
 
         myData.scores = scores;
 
-        console.log("My body", myData);
+        //console.log("My body", myData);
+        //console.log(friends.push(myData));
+        friends(myData);
 
         res.send("Got info!");
 
     });
 };
-
-
-// module.exports = router;
