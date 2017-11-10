@@ -10,7 +10,7 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname + "/../data/friends.js"));
     });
 
-
+//handler for the post in survey.html
     app.post("/api/friends", function(req,res){
 
         scores = [];
@@ -32,9 +32,8 @@ module.exports = function(app){
         myData.scores = scores;
 
         console.log("My body", myData);
+
         res.send("Got info!");
-
-
 
     });
 };
