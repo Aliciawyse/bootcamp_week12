@@ -34,9 +34,9 @@ module.exports = function(app){
 
         //console.log("My body", myData);
         //console.log(friends.push(myData));
-        friends(myData);
+        var newFriend = friends(myData);
 
-        res.send("Got info!");
+        res.send("Your closest match is " + newFriend);
 
     });
 };

@@ -36,7 +36,7 @@ function bestMatch(data){
             difference = difference +  Math.abs(allFriends[i].scores[n] - data.scores[n]);
         }
 
-        if (difference < lowest){
+        if (lowest === undefined || difference < lowest){
             lowest = difference;
             name = allFriends[i].name;
         }
@@ -45,11 +45,16 @@ function bestMatch(data){
 
     }
 
+    console.log(name);
+
     console.log("my results", results);
 
     allFriends.push(data);
 
+    return name;
+
 }
+
 
 
 
